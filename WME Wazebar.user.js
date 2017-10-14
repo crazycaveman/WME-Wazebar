@@ -184,7 +184,7 @@ var forumPage = false;
         if(WazeBarSettings.NAServerUpdate){
             GM_xmlhttpRequest({
                 method: "GET",
-                url: 'https://status.waze.com/feeds/posts/default?alt=rss',
+                url: 'https://status.waze.com/feeds/posts/default',
                 onload: ParseStatusFeed
             });
         }
@@ -365,7 +365,7 @@ var forumPage = false;
     }
 
     function ParseStatusFeed(data){
-        var re = /<title>NA map tiles were successfully updated to:\s*(.*?)<\/title>/;
+        var re = /<title[^>]*>NA map tiles were successfully updated to:(.*?)<\/title>/;
         var result = data.responseText.match(re)[1].trim();
         $('#WazebarStatus').append(result);
     }
