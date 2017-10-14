@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WME Wazebar
 // @namespace    https://greasyfork.org/users/30701-justins83-waze
-// @version      0.4.08
+// @version      0.4.09ccm1
 // @description  Displays a bar at the top of the editor that displays inbox, forum & wiki links
 // @author       JustinS83
 // @include      https://beta.waze.com/*
@@ -183,7 +183,7 @@ var forumPage = false;
         if(WazeBarSettings.NAServerUpdate){
             GM_xmlhttpRequest({
                 method: "GET",
-                url: 'https://wazestatus.wordpress.com/category/main/feed',
+                url: 'https://status.waze.com/feeds/posts/default',
                 onload: ParseStatusFeed
             });
         }
@@ -364,7 +364,7 @@ var forumPage = false;
     }
 
     function ParseStatusFeed(data){
-        var re = /<title>NA map tiles were successfully updated to:(.*?)<\/title>/;
+        var re = /<title>NA map tiles were successfully updated to:\s*(.*?)<\/title>/;
         var result = data.responseText.match(re)[1].trim();
         $('#WazebarStatus').append(result);
     }
