@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WME Wazebar
 // @namespace    https://greasyfork.org/users/30701-justins83-waze
-// @version      0.4.09ccm4
+// @version      0.4.09ccm5
 // @description  Displays a bar at the top of the editor that displays inbox, forum & wiki links
 // @author       JustinS83
 // @include      https://beta.waze.com/*
@@ -14,6 +14,7 @@
 // @connect      status.waze.com
 // @grant        GM_xmlhttpRequest
 // @updateURL    https://greasyfork.org/scripts/27604-wme-wazebar/code/WME%20Wazebar.user.js
+// @downloadURL  https://greasyfork.org/scripts/27604-wme-wazebar/code/WME%20Wazebar.user.js
 // ==/UserScript==
 
     var WazeBarSettings = [];
